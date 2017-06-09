@@ -4,7 +4,8 @@
             <div class="searchbar pr">
                 <span class="search-icon pa"><icon name="search"></icon></span>
                 <input type="text" placeholder="输入城市名或城市简码搜索" class="search-input" v-model.trim="searchText" @keyup="search($event)">
-                <span class="search-clear pa" @click="clearInput()"><icon name="remove"></icon></span>
+                <span class="search-clear pa" v-if="isLoading===false" @click="clearInput()"><icon name="remove"></icon></span>
+                <span class="search-loading pa" v-else><img src="../assets/images/oval.svg"></span>
             </div>
         </div>
         <ul class="list" v-if="placeData.length">
@@ -23,6 +24,7 @@ export default {
         return {
             searchText: '',
             placeData: [],
+            isLoading: false,
             timer: null
         }
     },
@@ -41,6 +43,7 @@ export default {
         search (e) {
             this.timer = e.timeStamp;
             if (this.searchText){
+                this.isLoading = true;
                 setTimeout(()=>{
                     if(this.timer - e.timeStamp === 0) {
                         this.$jsonp(this.$api.getLocationUrl, {
@@ -50,6 +53,7 @@ export default {
                             ttl: this.$api.ttl,
                             q: this.searchText
                         }).then(json => {
+                            this.isLoading = false;
                             this.placeData = json.results;
                         }).catch(err => {
                             console.error(err.statusText);
@@ -58,6 +62,7 @@ export default {
                 }, 300);
             } else {
                 this.clearData();
+                this.isLoading = false;
             }
         },
         selectPlace (place) {

@@ -106,7 +106,7 @@ export default {
                 location: this.location,
                 language: 'zh-Hans',
                 unit: 'c',
-                start: 0,
+                start: 1,
                 days: 6
             }).then(json => {
                 this.weatherData = json.results[0];

@@ -22,7 +22,7 @@
         <ul class="list" v-if="places.length > 0">
             <transition-group name="remove">
             <li class="item clearfix pr" v-for="place in places" :key="place.id">
-                <router-link class="pull-left pr" :to="{name: 'detail', params: { location: place.name }}">
+                <router-link class="pull-left pr" :to="{name: 'detail', params: { location: place.id }}">
                 <div class="item-title pull-left">
                     <p class="city">{{ place.isCurrent===true ? `${place.name} (当前城市)` : place.name}}</p>
                     <p class="country">{{place.path}}</p>
@@ -54,15 +54,6 @@ const Storage = {
     }
 }
 
-function initSwipeDelete () {
-    return Swiped.init({
-        query: '.list li a',
-        list: true,
-        right: 20,
-        unit: '%'
-    });
-}
-
 export default {
     name: 'list',
     data () {
@@ -79,9 +70,17 @@ export default {
     },
     mounted () {
         this.getLocation();
-        initSwipeDelete();
+        this.initSwipeDelete();
     },
     methods: {
+        initSwipeDelete () {
+            return Swiped.init({
+                query: '.list li a',
+                list: true,
+                right: 20,
+                unit: '%'
+            });
+        },
         toggleSearch (flag) {
             this.showSearch = flag
         },
@@ -96,13 +95,15 @@ export default {
                 } else {
                     // 带有当前城市标记则不弹出
                     if (!place.isCurrent) {
-                        alert('城市已存在，请勿重复选择！');
+                        alert('城市已存在，无需重复选择！');
                     }
                 }
             }
+
             this.toggleSearch(false);
+
             this.$nextTick(() => {
-                initSwipeDelete();
+                this.initSwipeDelete();
             })
         },
         //删除城市
@@ -123,7 +124,7 @@ export default {
         getLocation () {
             if (navigator.geolocation){
                 navigator.geolocation.getCurrentPosition((position) => {
-                    this.locationToCity (position.coords);
+                    this.locationToCity(position.coords);
                 });
             } else {
                 alert('获取不到您的位置~');

@@ -63,9 +63,13 @@ html, body {max-width: 750px;margin: auto;}
         }
     }
     $iconSize: 18px;
-    .search-icon {width: $iconSize;height: $iconSize;top: 50%;left: 0;transform: translateY(-(40rem/75)/2);}
-    .search-clear {width: $iconSize;height: $iconSize;top: 50%;right: 0;transform: translateY(-(40rem/75)/2);}
-    .fa-icon {display: block;width: 100%;height: 100%;}
+    .search-icon, .search-clear, .search-loading {
+    	width: $iconSize;height: $iconSize;top: 50%;
+    	transform: translateY(-(40rem/75)/2);
+    }
+    .search-icon {left: 0;}
+    .search-clear, .search-loading{right: 0;}
+    .fa-icon, .search-loading img{display: block;width: 100%;height: 100%;}
 
     .list {
         .item {border-bottom: 1px solid #eee;padding: 15px 10px}
