@@ -1,0 +1,124 @@
+@import 'var';
+@import 'reset';
+
+html, body {max-width: 750px;margin: auto;}
+
+/*base class*/
+.text-center {text-align: center;}
+.pull-left {float: left;}
+.pull-right {float: right;}
+.pr {position: relative;}
+.pa {position: absolute;}
+
+/*main css*/
+.router-view {
+	position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;flex-direction: column;
+	transition: all .5s cubic-bezier(.55,0,.1,1);
+}
+
+.navbar {
+	height: 55px;line-height: 55px;font-size: 20px;background: $color-primay;color: $color-default;
+}
+
+.float-button {
+	background: $color-primay;color: $color-default;
+	width: 55px;height: 55px;border-radius: 50%;
+	position: absolute;right: 25px;bottom: 25px;z-index: 4;
+	.fa-icon {width: 50%;height: 50%;vertical-align: middle;}
+}
+
+// 主页
+.main-page {
+	height: 100%;
+	.list {
+    	width: 100%;overflow-y: auto;overflow-x: hidden;flex: 1;
+        .item {border-bottom: 1px solid #eee;}
+        a {display: block;width: 100%;padding: 10px;z-index: 2;background: $color-default;}
+        .city {
+        	font-size: 18px;overflow: hidden;max-width: 100%;
+        	text-overflow: ellipsis;white-space: nowrap;color: #333;padding-right: (15rem/75);
+        }
+        .country {font-size: 12px;color: #999;padding-top: 5px;}
+        .temperature {font-size: 16px;color: #757575;}
+        .item-delete {
+        	width: 20%;height: 100%;color: $color-default;background: #f70046;font-size: 14px;
+        	position: absolute;right: 0;top: 0;z-index: 1;display: block;padding: 0;
+        }
+    }
+    .empty {
+    	text-align: center;font-size: 16px;color: #999;
+    	position: absolute;top: 50%;width: 100%;
+    }
+}
+
+.search-page {
+	top: 0;left: 0;width: 100%;height: 100%;background: $color-default;z-index: 5;
+	display: flex;flex-direction: column;
+	.searchbar{
+		$height: 35px;
+        border-bottom: 1px solid $color-default;height: $height;margin: 0 15px;position: relative;top: 5px;
+        .search-input {
+            background: transparent;width: 100%;height: $height;line-height: $height;
+            display: block;border: none;color: $color-default;padding: 0 25px;font-size: 16px;
+        }
+    }
+    $iconSize: 18px;
+    .search-icon {width: $iconSize;height: $iconSize;top: 50%;left: 0;transform: translateY(-(40rem/75)/2);}
+    .search-clear {width: $iconSize;height: $iconSize;top: 50%;right: 0;transform: translateY(-(40rem/75)/2);}
+    .fa-icon {display: block;width: 100%;height: 100%;}
+
+    .list {
+        .item {border-bottom: 1px solid #eee;padding: 15px 10px}
+        .city {
+        	font-size: 18px;overflow: hidden;max-width: 100%;
+        	text-overflow: ellipsis;white-space: nowrap;color: #333;padding-right: 5px;
+        }
+        .path {font-size: 12px;color: #999;}
+    }
+}
+
+.loading-page {
+	position: fixed;width: 100%;height: 100%;z-index: 10;
+	&:after {content: "";position: absolute;left: 0;top:0;width: 100%;height: 100%;background: rgba(0,0,0,.5);z-index: 1;}
+	p {position: absolute;left: 0;top: 0;right: 0;bottom: 0;margin: auto;text-align: center;width: 50px;height: 60px;z-index: 2;}
+	img {width: 38px;height: 38px;}
+	span {display: block;font-size: 12px;color: $color-default;margin-top: 5px;}
+}
+
+// 天气详情
+.weather-page {
+	flex: 1;background-size: cover;background-repeat: no-repeat;background-position: center center;
+	background-color: #919b9f;text-shadow: 1px 1px 1px #666;color: $color-default;line-height: 1;
+	font-size: (36rem/75);
+	&-header {
+		padding: (30rem/75);
+		.time {color: #eee;margin-top: (15rem/75);font-size: (26rem/75);}
+		.close {top: 0;right: 0;}
+	}
+	&-info {
+		padding-top: (60rem/75);
+		p {letter-spacing: 0;text-align: center;line-height: 1;}
+		.icon {
+			img {max-width: (125rem/75); height: auto;}
+		}
+		.number {font-size: (150rem/75);}
+		.degree-icon {font-style: normal;font-size: (80rem/75);top: -(50rem/75);}
+		.status {font-size: (40rem/75);padding-top: (20rem/75);}
+	}
+	&-footer {
+		width: 100%;text-align: center;left: 0;bottom: (30rem/75);font-size: (28rem/75);
+		li {float: left;width: 33.333%;}
+		.other-info {
+			border-bottom: 1px solid rgba(255,255,255,.5);padding-bottom: (30rem/75);line-height: 1.3;
+			.key {font-size: (36rem/75);}
+		}
+		.future-weather {
+			li {padding-top: (20rem/75);}
+			p {padding-top: (10rem/75);}
+			.date {font-weight: bold;}
+			.icon {
+				img {max-width: (60rem/75); height: auto;}
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+body,input,textarea{font-family: 'helvetica neue', 'microsoft yahei';}
+*{box-sizing:border-box}
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,button,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,input,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:none;outline:0;vertical-align:baseline}
+body,div,fieldset,form,h1,h2,h3,h4,h5,h6,html,p{text-size-adjust:none}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+mark{background:0 0}
+li,ol,ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}
+del{text-decoration:line-through}
+table{border-collapse:collapse;border-spacing:0}
+a:hover{color:#0565b3}
+a,img{touch-callout:none}
+img{vertical-align:top}
+em,i{font-style:normal}
+a,button,input{tap-highlight-color:rgba(255,255,255,0)}
+input,textarea{outline:0;resize:none}
+input[type=search],input[type=text],input[type=password],input[type=submit],input[type=email],input[type=date],textarea{-webkit-appearance:none;border-radius:0}
+hr{border:0;border-top:1px solid #ccc;margin:0}
+* html .clearfix{height:1%}
+.clearfix{
+    display:block;
+    &:after {content:"";display:block;height:0;clear:both;visibility:hidden}
+}
+input::placeholder {color: #fff;}
+input, select {outline: none;}
+button {border: none;outline: none;background: transparent;}
