@@ -1,5 +1,6 @@
 # vue-weather
-一款基于vuejs的单页面简易天气查询webapp，适合新入坑vuejs的小伙伴们学习参考
+一款基于vuejs+webpack构建的单页面简易天气查询webapp，适合新入坑vuejs的小伙伴们学习参考
+
 Demo地址：[请戳这里~](http://m.caidianqu.com/weather/#/ "请戳这里~")
 
 ### 主要功能点如下：
@@ -47,6 +48,8 @@ export default {
 	ttl: ttl
 }
 ```
+
+### 图片API来自 
 
 ### 灵感来源
 Framework7 天气案例 http://apps.framework7.cn/Weather7-Material/
