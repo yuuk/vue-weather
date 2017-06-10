@@ -5,6 +5,8 @@
 
 **1. 城市列表：**
 
+能自动获取当前城市，但是发现比较H5的地理位置API居然不支持非HTTPS环境，在本地调试使用127.0.0.1可以正常获取。
+
 ![](https://raw.githubusercontent.com/yuuk/vue-weather/master/screenshoot/城市列表.jpg)
 
 **2. 删除城市：**
@@ -44,3 +46,7 @@ export default {
 	ttl: ttl
 }
 ```
+
+### 灵感来源
+Framework7 天气案例 http://apps.framework7.cn/Weather7-Material/
+Framework7使用的是雅虎天气的API，个人觉得雅虎天气API使用太麻烦，所以选择了国内的心知天气……
