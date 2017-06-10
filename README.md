@@ -3,6 +3,12 @@
 
 Demo地址：[请戳这里~](http://m.caidianqu.com/weather/#/ "请戳这里~")
 
+或
+
+手机扫码：
+
+![](https://raw.githubusercontent.com/yuuk/vue-weather/master/screenshoot/qrcode.png)
+
 ### 主要功能点如下：
 
 **1. 城市列表：**
@@ -49,8 +55,13 @@ export default {
 }
 ```
 
-### 图片API来自 
+### 图片API
+最初的想法是想找一个支持关键词查询的图片API，比如查看“深圳天气”就搜索深圳相关的图片。
+但是没有找到 :astonished: 才使用了 bing随机壁纸API https://github.com/xCss/bing/tree/v1.0.0
 
 ### 灵感来源
 Framework7 天气案例 http://apps.framework7.cn/Weather7-Material/
 Framework7使用的是雅虎天气的API，个人觉得雅虎天气API使用太麻烦，所以选择了国内的心知天气……
+
+### License
+MIT
