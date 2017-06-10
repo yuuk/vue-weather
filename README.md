@@ -13,7 +13,7 @@ Demo地址：[请戳这里~](http://m.caidianqu.com/weather/#/ "请戳这里~")
 
 **1. 城市列表：**
 
-能自动获取当前城市，但是发现比较H5的地理位置API居然不支持非HTTPS环境，在本地调试使用127.0.0.1可以正常获取。
+能自动获取当前城市，但是发现H5的地理位置API居然不支持非HTTPS环境，在本地调试使用127.0.0.1可以正常获取。
 
 ![](https://raw.githubusercontent.com/yuuk/vue-weather/master/screenshoot/城市列表.jpg)
 
