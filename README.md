@@ -1,5 +1,6 @@
 # vue-weather
 一款基于vuejs的单页面简易天气查询webapp，适合新入坑vuejs的小伙伴们学习参考
+Demo地址：[请戳这里~](http://m.caidianqu.com/weather/#/ "请戳这里~")
 
 ### 主要功能点如下：
 
