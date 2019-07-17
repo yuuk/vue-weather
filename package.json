@@ -28,7 +28,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "crypto-js": "^3.1.9-1",
     "css-loader": "^0.28.4",
-    "eslint": "^3.19.0",
+    "eslint": "^6.0.1",
     "eslint-friendly-formatter": "^2.0.7",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-html": "^2.0.0",
